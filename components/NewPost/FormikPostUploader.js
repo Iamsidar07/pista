@@ -15,12 +15,12 @@ const FormikPostUploader = () => {
     const [thumbnail, setThumbnail] = useState("https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png");
 
     return (
-    <Formik  initialValues={{
-        imageUrl:"",
-        caption:""
-    }} onSubmit={(value)=>console.log(value)} validationSchema={validateSchema} validateOnMount={true}>
+        <Formik initialValues={{
+            imageUrl: "",
+            caption: ""
+        }} onSubmit={(value) => console.log(value)} validationSchema={validateSchema} validateOnMount={true}>
 
-            {({ handleChange, handleBlur, handleSubmit, values,errors,isValid }) => (
+            {({ handleChange, handleBlur, handleSubmit, values, errors, isValid }) => (
                 <View style={styles.container}>
                     <View style={styles.imageAndCaptionContainer}>
                         <Image source={{ uri: thumbnail ? thumbnail : values.imageUrl }} resizeMode="cover" style={styles.placeholderImage} />
@@ -57,59 +57,59 @@ const FormikPostUploader = () => {
 
                 </View>
             )}
-            
-    </Formik>
-  )
+
+        </Formik>
+    )
 }
 
 const styles = StyleSheet.create({
-    container:{
-     marginHorizontal:10,
-     marginTop:25,
+    container: {
+        marginHorizontal: 10,
+        marginTop: 25,
     },
-    imageAndCaptionContainer:{
-      flexDirection:"row",
-      justifyContent:"flex-start"
+    imageAndCaptionContainer: {
+        flexDirection: "row",
+        justifyContent: "flex-start"
 
     },
-    placeholderImage:{
-        width:150,
-        height:150,
-        borderRadius:10,
+    placeholderImage: {
+        width: 150,
+        height: 150,
+        borderRadius: 10,
     },
-    caption:{
-        paddingHorizontal:5,
-        paddingTop:10,
-        color:"white",
-        borderRadius:2,
-        flex:1,
-        marginLeft:7,
+    caption: {
+        paddingHorizontal: 5,
+        paddingTop: 10,
+        color: "white",
+        borderRadius: 2,
+        flex: 1,
+        marginLeft: 7,
     },
-    url:{
-        color:"white",
-        fontSize:14,
-        marginTop:7,
-        backgroundColor:"#3B3C3B",
-        padding:10,
-        borderRadius:7,
+    url: {
+        color: "white",
+        fontSize: 14,
+        marginTop: 7,
+        backgroundColor: "#3B3C3B",
+        padding: 10,
+        borderRadius: 7,
     },
-    uploadButtonContainer:{
+    uploadButtonContainer: {
         flexDirection: "row",
         alignItems: "center",
         backgroundColor: "#3B3C3B",
-        justifyContent:"center",
-        marginTop:50,
-        paddingVertical:10,
-        borderRadius:30,
+        justifyContent: "center",
+        marginTop: 50,
+        paddingVertical: 10,
+        borderRadius: 30,
     },
-    uploadButton:{
-      color:"white",
-      marginLeft:5,
+    uploadButton: {
+        color: "white",
+        marginLeft: 5,
     },
-    error:{
-        color:"red",
-        fontSize:12,
-        marginVertical:4,
+    error: {
+        color: "red",
+        fontSize: 12,
+        marginVertical: 4,
     }
 })
 
