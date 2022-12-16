@@ -6,9 +6,10 @@ import Post from '../components/home/Post';
 import Divider from '../components/home/Divider';
 import { posts } from '../data/posts';
 import { stories } from '../data/stories';
-import BottomTab from '../components/home/BottomTab';
+import BottomTab from '../components/BottomTab';
 
 const HomeScreen = ({navigation}) => {
+  console.log(navigation)
   return (
     <View style={styles.container}>
       <Header navigation={navigation}/>
@@ -23,7 +24,7 @@ const HomeScreen = ({navigation}) => {
           }
         </View>
       </ScrollView>
-      <BottomTab />
+      <BottomTab navigation={navigation}/>
     </View>
   );
 };
