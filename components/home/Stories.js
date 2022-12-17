@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
   },
   name: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: "200",
     marginTop: 5,
     color: "white"

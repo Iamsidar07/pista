@@ -3,6 +3,9 @@ import React from 'react'
 import Constants from 'expo-constants';
 import logo from "../assets/white-logo.png"
 import illustration from "../assets/illustration.png"
+import illu_01 from "../assets/illu_01.png"
+import illu_02 from "../assets/illu_02.png"
+import illu_03 from "../assets/illu_03.png"
 import StyledText from '../StyledText';
 
 const windowWidth = Dimensions.get('window').width;
@@ -12,20 +15,24 @@ const GetStartedScreen = () => {
     <View style={styles.container}>
               <Image style={styles.logo} source={logo} resizeMode="contain" />
               <ScrollView horizontal contentContainerStyle={{
-                marginTop:10,
+                marginTop:20,
               }}>
               <View style={styles.illustrationContainer}>
-                  <Image style={styles.illustration} source={illustration} resizeMode="contain" />
-                
                   <StyledText text={"Lorem ipsum dolor sit."} style={styles.title} />
-                  <StyledText text={"Lorem ipsum, dolor sit amet consectetur adipisicing."} style={styles.subtitle}/>
+                  <StyledText text={"Lorem ipsum, dolor sit amet consectetur adipisicing."} style={styles.subtitle} />
+                  <Image style={styles.illustration} source={illu_01} resizeMode="contain" />
               </View>
               <View style={styles.illustrationContainer}>
-                  <Image style={styles.illustration} source={illustration} resizeMode="contain" />
                   <StyledText text={"Lorem ipsum dolor sit."} style={styles.title} />
-                  <StyledText text={"Lorem ipsum, dolor sit amet consectetur adipisicing."} style={styles.subtitle}/>
+                  <StyledText text={"Lorem ipsum, dolor sit amet consectetur adipisicing."} style={styles.subtitle} />
+                  <Image style={styles.illustration} source={illu_02} resizeMode="contain" />
               </View>
-             
+              <View style={styles.illustrationContainer}>
+                  <StyledText text={"Lorem ipsum dolor sit."} style={styles.title} />
+                  <StyledText text={"Lorem ipsum, dolor sit amet consectetur adipisicing."} style={styles.subtitle} />
+                  <Image style={styles.illustration} source={illu_03} resizeMode="contain" />
+              </View>
+              
               </ScrollView>
           <TouchableOpacity style={styles.btn}>
               <StyledText text={"Get started"} style={styles.btnText} />
@@ -49,9 +56,10 @@ const styles = StyleSheet.create({
         width: windowWidth,
         height: windowHeight / 2,
         alignItems:"center",
+        marginTop:20,
     },
     illustration: {
-        width: windowWidth,
+        width: windowWidth-10,
         height: windowHeight/2,
         resizeMode: "contain",
         borderRadius:1,

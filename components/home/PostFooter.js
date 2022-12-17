@@ -49,14 +49,15 @@ const PostFooter = ({username,caption,likes,comments,postedTime}) => {
       marginTop: 2,
     },
     user: {
-      fontSize: 12,
+      fontSize: 18,
       fontWeight: '500',
       color:"white"
     },
     captionText: {
-      fontSize: 12,
+      fontSize: 18,
       fontWeight: '400',
-      color:"white"
+      color:"white",
+      marginLeft:4,
     },
     commentText: {
       fontWeight: '300',
@@ -64,8 +65,9 @@ const PostFooter = ({username,caption,likes,comments,postedTime}) => {
       marginTop:4,
     },
     postedTime: {
-      fontSize: 10,
+      fontSize: 12,
       marginBottom: 5,
+      color:"gray",
     },
   });
   return (

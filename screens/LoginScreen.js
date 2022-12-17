@@ -118,6 +118,8 @@ const styles = StyleSheet.create({
   textInput: {
     width: '90%',
     marginRight: 5,
+    fontFamily:"JosefinSans-Regular",
+    fontSize:16,
   },
   recoveryPasswordContainer: {
     alignItems: 'flex-end',
