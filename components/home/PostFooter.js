@@ -11,6 +11,7 @@ import { EvilIcons, Ionicons } from '@expo/vector-icons';
 
 import heart from '../../assets/heart1.png';
 import Comment from './Comment';
+import StyledText from '../../StyledText';
 const PostFooter = ({username,caption,likes,comments,postedTime}) => {
   const [liked, setLiked] = useState(false);
   const [showComment, setShowComment] = useState(false);
@@ -97,17 +98,19 @@ const PostFooter = ({username,caption,likes,comments,postedTime}) => {
           <Ionicons name="ios-bookmark-outline" size={24} color="white" />
         </TouchableOpacity>
       </View>
-      <Text style={styles.likes}>{likes} likes</Text>
+      <StyledText style={styles.likes} text={`${likes} likes`}/>
       <View style={styles.caption}>
-        <Text style={styles.user}>{username}</Text>
-        <Text style={styles.captionText}> {caption} </Text>
+
+        <StyledText style={styles.user} text={`${username}`} />
+        <StyledText style={styles.captionText} text={`${caption}`} />
+
       </View>
 
       <TouchableOpacity onPress={() => setShowComment(!showComment)}>
-        <Text style={styles.commentText}>View all {comments.length} comments</Text>
+        
+        <StyledText style={styles.commentText} text={`View all ${comments.length} comments`} />
       </TouchableOpacity>
-      <Text style={[styles.postedTime, styles.commentText]}>{postedTime}</Text>
-
+      <StyledText style={styles.postedTime} text={`${postedTime}`} />
       {showComment && (
         
           comments.map(({comment,username,profilePicture,id})=>{

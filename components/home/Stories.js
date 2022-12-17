@@ -7,14 +7,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
+import StyledText from "../../StyledText"
 
 const Stories = ({ stories }) => {
 
   return (
-    <View
-      style={{
-        marginBottom: 15,
-      }}>
+    <View>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -22,6 +20,8 @@ const Stories = ({ stories }) => {
 
         {
           stories.map(story => {
+            const username = story.username.length > 8 ? story.username.slice(0, 8).toLowerCase() + "..." : story.username.toLowerCase();
+
             return <TouchableOpacity style={styles.container} key={story.id}>
               <View style={styles.logoContainer}>
                 <Image
@@ -32,9 +32,8 @@ const Stories = ({ stories }) => {
                   resizeMode="cover"
                 />
               </View>
-              <Text style={styles.name}>{
-                story.username.length > 8 ? story.username.slice(0, 8).toLowerCase() + "..." : story.username.toLowerCase()
-              }</Text>
+              <StyledText style={styles.name} text={`${username
+                }`} />
             </TouchableOpacity>
           })
         }

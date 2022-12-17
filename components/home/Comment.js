@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet,TouchableOpacity,Image } from 'react-native';
+import StyledText from '../../StyledText';
 
 const Comment = ({ username, comment,profilePicture }) => {
   return (
@@ -10,8 +11,8 @@ const Comment = ({ username, comment,profilePicture }) => {
           resizeMode="contain"
         />
       </TouchableOpacity>
-      <Text style={styles.user}>{username}</Text>
-      <Text style={styles.captionText}> {comment} </Text>
+      <StyledText style={styles.user} text={`${username}`}/>
+      <StyledText style={styles.captionText} text={`${comment}`}/>
     </View>
   );
 };

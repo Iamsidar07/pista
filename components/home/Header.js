@@ -4,6 +4,7 @@ import Constants from 'expo-constants';
 
 import logo from "../../assets/white-logo.png"
 import { EvilIcons , AntDesign} from '@expo/vector-icons';
+import StyledText from '../../StyledText';
 
 const Header = ({navigation}) => {
   return (
@@ -18,7 +19,7 @@ const Header = ({navigation}) => {
         <TouchableOpacity style={styles.badgeContainer}>
           <AntDesign name="message1" size={24} color="white" />
           <View style={styles.bagde}>
-            <Text style={styles.messageNumber}>10</Text>
+            <StyledText style={styles.messageNumber} text={"10"}/>
           </View>
         </TouchableOpacity>
 

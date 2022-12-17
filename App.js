@@ -1,4 +1,3 @@
-
 import { useFonts } from 'expo-font';
 import SignedInStack from './navigation';
 export default function App() {
@@ -8,8 +7,6 @@ export default function App() {
     "AnekDevanagari-Medium": require("./assets/fonts/AnekDevanagari-Medium.ttf"),
     "AnekDevanagari-Regular": require("./assets/fonts/AnekDevanagari-Regular.ttf"),
   });
-
-
 
   if (!loaded) return null;
   return (<SignedInStack />
