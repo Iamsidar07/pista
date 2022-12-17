@@ -4,6 +4,7 @@ import Divider from "../home/Divider"
 import { AntDesign } from '@expo/vector-icons';
 import { Formik } from 'formik';
 import * as Yup from "yup"
+import StyledText from '../../StyledText';
 
 
 const FormikPostUploader = () => {
@@ -47,11 +48,12 @@ const FormikPostUploader = () => {
                         placeholder="paste image url..."
                         cursorColor={"white"}
                     />
-                    {errors.imageUrl && <Text style={styles.error}>⚠️ {errors.imageUrl}</Text>}
+                    {errors.imageUrl && <StyledText style={styles.error} text={`⚠️ ${errors.imageUrl}`}/>}
                     <TouchableOpacity onPress={handleSubmit} disabled={!isValid}>
                         <View style={styles.uploadButtonContainer}>
                             <AntDesign name="clouduploado" size={35} color="green" />
-                            <Text style={styles.uploadButton}>Upload </Text>
+                            
+                            <StyledText style={styles.uploadButton} text={"Share"} />
                         </View>
                     </TouchableOpacity>
 

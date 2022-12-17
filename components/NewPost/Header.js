@@ -2,14 +2,14 @@ import { View, Text, TouchableOpacity, StyleSheet, } from 'react-native'
 import React from 'react'
 import Constants from 'expo-constants';
 import { Ionicons } from '@expo/vector-icons';
-
+import StyledText from "../../StyledText"
 const Header = ({navigation}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={()=>navigation.goBack()}>
               <Ionicons name="chevron-back" size={27} color="white" />
       </TouchableOpacity>
-      <Text style={styles.text}>New post</Text>
+      <StyledText style={styles.text} text={"New Post"} />
     </View>
   )
 }

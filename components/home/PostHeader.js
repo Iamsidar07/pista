@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import verifiedBadge from "../../assets/verified.png"
 import Button from './Button';
+import StyledText from '../../StyledText';
 
 const PostHeader = ({ profilePicture, username, isVerified }) => {
   console.log(isVerified)
@@ -16,7 +17,7 @@ const PostHeader = ({ profilePicture, username, isVerified }) => {
             resizeMode="contain"
           />
         </TouchableOpacity>
-        <Text style={styles.username}>{username}</Text>
+        <StyledText style={styles.username} text={`${username }`}/>
         {isVerified && <Image
           source={verifiedBadge}
           style={styles.badgelogo}

@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'rea
 import React from 'react'
 import Constants from 'expo-constants'
 import illustration from "../assets/illustration.png"
+import StyledText from '../StyledText'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -15,19 +16,20 @@ const RegisterScreen = ({navigation}) => {
                     <View style={styles.content}>
                         <View>
                             <View style={styles.titleContainer}>
-                                <Text style={styles.title}>Discover Your </Text>
-                                <Text style={styles.title}>Dream Job Here</Text>
+                        <StyledText style={styles.title} text={"Discover Your"} />
+                        <StyledText style={styles.title} text={"Dream Job Here"} />
                             </View>
                             <View style={styles.subtitleContainer}><Text style={styles.subtitle}>Explore all the most existing job roles</Text>
-                                <Text style={styles.subtitle}>based on your interest And study major </Text>
+                        <StyledText style={styles.subtitle} text={"based on your interest And study major "} />
                             </View>
                         </View>
                         <View style={styles.btnContainer}>
-                            <TouchableOpacity style={[styles.btn, styles.registerBtn]}>
-                                <Text style={styles.btnText}>Register</Text>
-                            </TouchableOpacity>
+                            <View style={[styles.btn, styles.registerBtn]}>
+
+                        <StyledText style={styles.btnText} text={"Register"} />
+                            </View>
                             <TouchableOpacity style={[styles.btn, styles.loginBtn]} onPress={()=>navigation.push("LoginScreen")}>
-                                <Text style={styles.btnText}>Login</Text>
+                        <StyledText style={styles.btnText} text={"Login"} />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -75,7 +77,6 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 30,
         textAlign: "center",
-        fontWeight: "bold",
     },
     subtitle: {
         color: "#c1c5d3",
@@ -89,28 +90,28 @@ const styles = StyleSheet.create({
 
     },
     btn: {
-        backgroundColor: "red",
+        backgroundColor: "transparent",
         paddingHorizontal: 35,
         paddingVertical: 25,
-        width: "45%",
-        //   marginHorizontal:10,
-        //   borderRadius:10,
+        width: "47%",
     },
     btnText: {
         color: "black",
-        fontWeight: "bold",
         textAlign: "center",
     },
     registerBtn: {
-        backgroundColor: "#ffffff",
+        backgroundColor:"#ffffff",
         borderRadius: 10,
-        zIndex: 1
+        shadowOffset:{width:100,height:1},
+        shadowColor:"white",
+        zIndex: 2
     },
     loginBtn: {
         backgroundColor: "#eaebf1",
         marginLeft: -8,
         borderTopRightRadius: 10,
         borderBottomEndRadius: 10,
+        zIndex:-1,
     },
 
 })
