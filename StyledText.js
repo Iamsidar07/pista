@@ -9,7 +9,8 @@ const StyledText = ({text,style,...otherProps}) => {
 
 const styles=StyleSheet.create({
   text:{
-    fontFamily:"AnekDevanagari-Medium"
+    fontFamily:"JosefinSans-Regular",
+    fontSize:16,
   }
 })
 

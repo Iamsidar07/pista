@@ -19,7 +19,8 @@ const RegisterScreen = ({navigation}) => {
                         <StyledText style={styles.title} text={"Discover Your"} />
                         <StyledText style={styles.title} text={"Dream Job Here"} />
                             </View>
-                            <View style={styles.subtitleContainer}><Text style={styles.subtitle}>Explore all the most existing job roles</Text>
+                            <View style={styles.subtitleContainer}>
+                        <StyledText style={styles.subtitle} text={"Explore all the most existing job roles "} />
                         <StyledText style={styles.subtitle} text={"based on your interest And study major "} />
                             </View>
                         </View>

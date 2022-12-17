@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     height: 20,
   },
   username: {
-    fontSize: 12,
     color: "white",
   },
 
