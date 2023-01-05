@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
         borderRadius: 2,
         flex: 1,
         marginLeft: 7,
+        fontFamily:"JosefinSans-Regular",
     },
     url: {
         color: "white",
@@ -93,7 +94,8 @@ const styles = StyleSheet.create({
         marginTop: 7,
         backgroundColor: "#3B3C3B",
         padding: 10,
-        borderRadius: 7,
+        borderRadius: 2,
+        fontFamily:"JosefinSans-Regular",
     },
     uploadButtonContainer: {
         flexDirection: "row",

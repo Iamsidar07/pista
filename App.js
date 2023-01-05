@@ -1,5 +1,6 @@
 import { useFonts } from 'expo-font';
-import SignedInStack from './navigation';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import AuthNavigationStack from './AuthNavigationStack';
 export default function App() {
   const [loaded] = useFonts({
     // "AnekDevanagari-Bold": require("./assets/fonts/AnekDevanagari-Bold.ttf"),
@@ -11,7 +12,10 @@ export default function App() {
   });
 
   if (!loaded) return null;
-  return (<SignedInStack />
+  const queryClient=new QueryClient();
+  return (<QueryClientProvider client={queryClient}>
+    <AuthNavigationStack />
+  </QueryClientProvider>
   );
 }
 

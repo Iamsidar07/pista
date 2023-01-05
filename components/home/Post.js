@@ -6,6 +6,7 @@ import Divider from './Divider'
  
 
 const Post = ({post}) => {
+  
   return (
     <View style={{
       backgroundColor:"black",

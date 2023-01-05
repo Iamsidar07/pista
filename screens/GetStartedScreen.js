@@ -10,7 +10,7 @@ import StyledText from '../StyledText';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-const GetStartedScreen = () => {
+const GetStartedScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
               <Image style={styles.logo} source={logo} resizeMode="contain" />
@@ -34,7 +34,7 @@ const GetStartedScreen = () => {
               </View>
               
               </ScrollView>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate("LoginScreen")}>
               <StyledText text={"Get started"} style={styles.btnText} />
 </TouchableOpacity>
 
