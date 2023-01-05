@@ -1,15 +1,28 @@
 import { StyleSheet, ScrollView,  View } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/home/Header';
 import Stories from '../components/home/Stories';
 import Post from '../components/home/Post';
 import Divider from '../components/home/Divider';
-import { posts } from '../data/posts';
+import  Data  from '../data/posts';
 import { stories } from '../data/stories';
 import BottomTab from '../components/BottomTab';
+import { collectionGroup, getDocs, onSnapshot,doc, collection } from 'firebase/firestore';
+import { db } from '../firebase';
 
 const HomeScreen = ({navigation}) => {
-  console.log(navigation)
+  const [posts,setPosts]=useState([]);
+  useEffect(() => {
+    const getPosts=async()=>{
+      const q = collectionGroup(db, "posts");
+       onSnapshot(q, (querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          setPosts((previousPost)=>[...previousPost,{id:doc.id,postedTime:"2s ago",...doc.data()}])
+        });
+      });
+    }
+    getPosts();
+  }, [])
   return (
     <View style={styles.container}>
       <Header navigation={navigation}/>
@@ -18,7 +31,7 @@ const HomeScreen = ({navigation}) => {
         <Divider />
         <View style={styles.postContainer}>
           {
-            posts.map((post) => {
+            posts?.map((post) => {
               return <Post post={post} key={post.id} />
             })
           }

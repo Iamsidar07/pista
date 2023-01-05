@@ -5,11 +5,18 @@ import Constants from 'expo-constants';
 import logo from "../../assets/white-logo.png"
 import { EvilIcons , AntDesign} from '@expo/vector-icons';
 import StyledText from '../../StyledText';
-
+import {signOut} from "firebase/auth"
+import {auth } from "../../firebase"
 const Header = ({navigation}) => {
+  //I will refactor these functions into async and await functions
+  const handleSignOut=()=>{
+     signOut(auth).then(()=>{
+      console.log("Sign out");
+     }).catch((error)=>console.error(error));
+  }
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.logoContainer}>
+      <TouchableOpacity style={styles.logoContainer} onPress={handleSignOut}>
         <Image style={styles.logo} source={logo} resizeMode="contain" />
       </TouchableOpacity>
       <View style={styles.iconsContainer}>

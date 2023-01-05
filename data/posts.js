@@ -1,4 +1,4 @@
-export const posts = [
+ const posts = [
     {
         id: 1,
         username: "sunny",
@@ -121,3 +121,5 @@ export const posts = [
     },
 
 ]
+
+export default posts;
